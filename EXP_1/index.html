@@ -1,95 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Art Supplies Store</title>
+
+    <style>
+        body{
+            background-color: lightyellow;
+            color: black;
+        }
+    </style>
 </head>
-<body bgcolor="burlywood">
-<center>
-<table width="100%" bgcolor="brown">
-<tr>
-<td align="center">
-<font color="white">
-<h1>ONLINE ART SUPPLIES STORE</h1>
-</font>
-</td>
-</tr>
-</table>
-<br>
-<a href="https://en.wikipedia.org/wiki/Mona_Lisa">
-<img src="MONA_LISA.jpg" width="250" height="300" alt="Mona Lisa">
-</a>
-<br><br>
-<a href="https://en.wikipedia.org/wiki/Mona_Lisa">About</a> |
-<a href="mailto:artstore@gmail.com">Email</a> |
-<a href="tel:+919876543210">Call</a>
-</center>
-<hr>
-<h2>Mona Lisa</h2>
-<p>
-The Mona Lisa is one of the world's most famous paintings. It was painted by Leonardo da Vinci during the Renaissance and is displayed in the Louvre Museum, Paris.
-</p>
-<hr>
-<h2>Painting Details</h2>
-<table border="1" cellpadding="8" bgcolor="white">
-<tr bgcolor="lightgray">
-<th>Artist</th>
-<th>Year</th>
-<th>Medium</th>
-</tr>
-<tr>
-<td>Leonardo da Vinci</td>
-<td>1503</td>
-<td>Oil Painting</td>
-</tr>
-</table>
-<hr>
-<h2>Description List</h2>
-<dl>
-<dt><b>Medium</b></dt>
-<dd>Oil Painting</dd>
-<dt><b>Location</b></dt>
-<dd>Louvre Museum</dd>
-</dl>
-<hr>
-<h2>Ordered List</h2>
-<ol>
-<li>Art Supplies
-<ol>
-<li>Brush</li>
-<li>Canvas</li>
-<li>Palette</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h2>Unordered List</h2>
-<ul>
-<li>Painting Types
-<ul>
-<li>Oil Painting</li>
-<li>Watercolor</li>
-<li>Acrylic</li>
-</ul>
-</li>
-</ul>
-<hr>
-<center>
-<table width="100%" bgcolor="brown">
-<tr>
-<td align="center">
-<font color="white">
-<h3>Contact Us</h3>
-<p>
-<a href="mailto:artstore@gmail.com"><font color="yellow">Email Us</font></a>
-</p>
-<p>
-<a href="tel:+919876543210"><font color="yellow">Call Us</font></a>
-</p>
-<p>© 2026 Online Art Supplies Store</p>
-</font>
-</td>
-</tr>
-</table>
-</center>
+<body>
+    <!-- Header Section -->
+    <h1 id="top" style = 'text-align: center;'>Online Art Supplies Store</h1>
+    <p>Welcome to our Online Art Supplies Store.</p>
+    <p>We provide paints, brushes, canvases, sketchbooks and other art materials.</p>
+    <!-- About Section -->
+    <div id="about">
+        <h2>About Us</h2>
+        <p>We offer quality art supplies for students, beginners and professional artists.</p>
+    </div>
+    <!-- Image Section -->
+    <div>
+        <h2>Featured Product</h2>
+        <a href="https://www.artzo.in/" target="_blank">
+            <img src="art.jpg" alt="Art Supplies" width="300">
+        </a>
+        <p>Click the image to visit our partner art supplies website.</p>
+    </div>
+    <!-- Products Section -->
+    <div id="products">
+        <h2>Our Products</h2>
+        <h3>Painting Supplies</h3>
+        <ol>
+            <li>Paints
+                <ol>
+                    <li>Acrylic Paint</li>
+                    <li>Watercolor Paint</li>
+                </ol>
+            </li>
+            <li>Brushes
+                <ol>
+                    <li>Round Brush</li>
+                    <li>Flat Brush</li>
+                </ol>
+            </li>
+        </ol>
+        <h3>Drawing Materials</h3>
+        <ul>
+            <li>Sketching
+                <ul>
+                    <li>Sketchbook</li>
+                    <li>Pencil</li>
+                </ul>
+            </li>
+            <li>Painting
+                <ul>
+                    <li>Canvas</li>
+                    <li>Palette</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- Description List Section -->
+    <div>
+        <h2>Art Terms</h2>
+        <dl>
+            <dt>Canvas</dt>
+            <dd>A surface used for painting.</dd>
+            <dt>Palette</dt>
+            <dd>Used for mixing paint colours.</dd>
+        </dl>
+    </div>
+    <!-- Price List Section -->
+    <div>
+        <h2>Price List</h2>
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Canvas</td>
+                <td>₹250</td>
+            </tr>
+            <tr>
+                <td>Brush Set</td>
+                <td>₹350</td>
+            </tr>
+            <tr>
+                <td>Paint Set</td>
+                <td>₹600</td>
+            </tr>
+        </table>
+    </div>
+    <!--Links Section -->
+    <div>
+        <h2> Links</h2>
+        <a href="#about">About Us</a><br>
+        <a href="#products">Our Products</a><br>
+        <a href="#contact">Contact Us</a><br>
+        <a href="#top">Back to Top</a>
+    </div>
+    <!-- Contact Section -->
+    <div id="contact">
+        <h2>Contact Us</h2>
+        <p>Email:
+            <a href="mailto:artstore@gmail.com">artstore@gmail.com</a></p>
+        <p>Phone:
+            <a href="tel:+919876543210">+91 9876543210</a></p>
+        <p>
+            Visit our partner:
+            <a href="https://www.artzo.in/" target="_blank"> Artzo Materials</a></p>
+    </div>
+    <!-- Footer Section -->
+    <div>
+        <h3>Thank You for Visiting Our Store!</h3>
+    </div>
 </body>
 </html>
