@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Online Art Supplies Store - Order Form</title>
+    <style>
+        body{
+            background-color:lightyellow;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">Online Art Supplies Store</h1>
+    <p align="center">Welcome! Order your favorite art supplies easily.</p>
+    <hr>
+    <p align="center">
+        <img src="arts.jpg" alt="Art Supplies" width="250">
+    </p>
+    <form action="#" method="post">
+        <fieldset>
+            <legend><b>Customer Details</b></legend>
+            <label for="name">Customer Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+            <label for="email">Email Address:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+            <label for="phone">Mobile Number:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="Enter mobile number"><br><br>
+            <label for="password">Create Password:</label><br>
+            <input type="password" id="password" name="password" required>
+        </fieldset>
+        <hr>
+        <fieldset>
+            <legend><b>Order Details</b></legend>
+            <label for="category">Product Category:</label><br>
+            <select id="category" name="category">
+                <option>Painting Supplies</option>
+                <option>Drawing Supplies</option>
+                <option>Craft Materials</option>
+            </select><br><br>
+            <label>Select Products:</label><br>
+            <input type="checkbox" id="paint" name="product" value="Paint Set">
+            <label for="paint">Paint Set</label><br>
+            <input type="checkbox" id="brush" name="product" value="Brush Set">
+            <label for="brush">Brush Set</label><br>
+            <input type="checkbox" id="canvas" name="product" value="Canvas">
+            <label for="canvas">Canvas</label><br><br>
+            <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" min="1" max="20"><br><br>
+            <label for="color">Choose Paint Color:</label><br>
+            <input type="color" id="color" name="color">
+        </fieldset>
+        <hr>
+        <fieldset>
+            <legend><b>Delivery Details</b></legend>
+            <label>Delivery Method:</label><br>
+            <input type="radio" id="standard" name="delivery" value="Standard">
+            <label for="standard">Standard</label>
+            <input type="radio" id="express" name="delivery" value="Express">
+            <label for="express">Express</label><br><br>
+            <label for="deliverydate">Preferred Delivery Date:</label><br>
+            <input type="date" id="deliverydate" name="deliverydate"><br><br>
+            <label for="city">Delivery City:</label><br>
+            <input list="cities" id="city" name="city">
+            <datalist id="cities">
+                <option value="Coimbatore">
+                <option value="Chennai">
+                <option value="Bangalore">
+                <option value="Kochi">
+            </datalist><br><br>
+            <label for="address">Delivery Address:</label><br>
+            <textarea id="address" rows="4" cols="35" placeholder="Enter your address"></textarea>
+        </fieldset>
+        <hr>
+        <fieldset>
+            <legend><b>Customer Feedback</b></legend>
+            <label for="search">Search Product:</label><br>
+            <input type="search" id="search" placeholder="Search art supplies"><br><br>
+            <label for="rating">Rate Our Store:</label><br>
+            <input type="range" id="rating" min="1" max="10"><br><br>
+            <label for="website">Reference Website for Art Supplies :</label><br>
+            <input type="url" id="website" placeholder="https://example.com">
+        </fieldset>
+        <hr>
+        <input type="submit" value="Place Order">
+        <input type="reset" value="Clear Form">
+    </form>
+    <hr>
+    <p align="center">
+        Thank You for Shopping at Online Art Supplies Store!
+    </p>
+</body>
+</html>
