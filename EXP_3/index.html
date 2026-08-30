@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Website</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial;
+background:lightyellow;
+line-height:1.6;
+}
+
+/* Header */
+
+header{
+background:lightyellow;
+color:black;
+padding:20px;
+text-align:center;
+}
+
+/* Navigation */
+
+nav{
+background:brown;
+}
+
+nav ul{
+display:flex;
+justify-content:center;
+list-style:none;
+}
+
+nav li{
+padding:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+
+
+/* Hero */
+
+.mainbar{
+background:lightyellow;
+padding:50px;
+text-align:center;
+}
+
+/* Main Container */
+
+.container{
+display:flex;
+padding:20px;
+gap:20px;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:25%;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+
+
+.sidebar li{
+padding:10px;
+border-bottom:1px solid gray;
+}
+
+/* Content */
+
+.content{
+width:75%;
+}
+
+/* Cards */
+
+.cards{
+display:flex;
+gap:20px;
+align-items:stretch;
+}
+
+.card{
+flex:1;
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 0 8px gray;
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
+
+button{
+background:#0066cc;
+color:white;
+padding:10px 20px;
+border:none;
+margin-top:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#003d80;
+}
+
+/* Footer */
+
+footer{
+background:#222;
+color:white;
+padding:20px;
+text-align:center;
+margin-top:20px;
+}
+
+/* Tablet */
+
+@media screen and (max-width:992px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar,
+.content{
+width:100%;
+}
+
+.cards{
+flex-wrap:wrap;
+}
+
+.card{
+width:45%;
+}
+
+}
+
+/* Mobile */
+
+@media screen and (max-width:768px){
+
+nav ul{
+flex-direction:column;
+}
+
+.cards{
+flex-direction:column;
+}
+
+.card{
+width:100%;
+}
+
+.hero{
+padding:30px;
+}
+
+}
+
+/* Small Mobile */
+
+@media screen and (max-width:480px){
+
+header h1{
+font-size:24px;
+}
+
+.hero h2{
+font-size:22px;
+}
+
+button{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Online Art Supplies Store</h1>
+
+</header>
+
+<nav>
+
+<ul>
+
+<li><a href="#">Home</a></li>
+
+<li><a href="#">Shop</a></li>
+
+<li><a href="#">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<section class="mainbar">
+
+<h2>Welcome to Our Art Supplies Store</h2>
+
+<p>
+Discover our wide range of high quality art supplies for all your creative needs.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h3>Categories</h3>
+
+<ul>
+
+<li>Acrylic Paints</li>
+
+<li>Oil Paints</li>
+
+<li>Watercolors</li>
+
+<li>Pencils</li>
+
+<li>Sketching Tools</li>
+
+<li>Brushes</li>
+
+</ul>
+
+</div>
+
+<div class="content">
+
+<h2>Art Supplies</h2>
+
+<p>
+
+Discover our wide range of high-quality art supplies for all your creative needs.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="art_basic.jpg" alt="Art Supplies">
+
+<h3>Essential Art Supplies</h3>
+
+<p>Create wonderful artwork with our essential art supplies.</p>
+
+<button>Read More</button>
+
+</div>
+
+<div class="card">
+
+<img src="mona_lisa.jpg" alt="Mona Lisa">
+
+<h3>Paintings</h3>
+
+<p>Discover our collection of beautiful paintings.</p>
+
+<button>Read More</button>
+
+</div>
+
+<div class="card">
+
+<img src="art.jpg" alt="Professional Art Supplies">
+
+<h3>Professional Art Supplies</h3>
+
+<p>Upgrade your art toolkit with our professional grade supplies.</p>
+
+<button>Read More</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>Follow us for creating timeless paintings...</h3>
+
+<p>© 2026 Online Art Supplies Store</p>
+
+</footer>
+
+</body>
+
+</html>
