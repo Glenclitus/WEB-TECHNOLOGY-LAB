@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up - Online Art Supplies Store</title>
+<style>
+/* Basic CSS */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial, sans-serif;
+    background:lightyellow;
+    line-height:1.6;
+    color:#333;
+}
+/* Header */
+header{
+    background:lightyellow;
+    color:black;
+    padding:20px;
+    text-align:center;
+    border-radius:0 0 30px 30px;
+}
+/* Navigation */
+nav{
+    background:brown;
+}
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+nav li{
+    padding:15px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+nav a:hover{
+    color:yellow;
+}
+/* Main Container */
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+    min-height:70vh;
+}
+/* Signup Form Box */
+.signup-card{
+    background:white;
+    width:100%;
+    max-width:480px;
+    padding:35px 30px;
+    border-radius:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    border-top:6px solid brown;
+}
+.signup-card h2{
+    color:brown;
+    margin-bottom:10px;
+    text-align:center;
+}
+.signup-card p.subtitle{
+    color:#666;
+    margin-bottom:25px;
+    text-align:center;
+    font-size:14px;
+}
+.form-group{
+    margin-bottom:18px;
+    display:flex;
+    flex-direction:column;
+}
+.form-group label{
+    font-weight:bold;
+    margin-bottom:6px;
+    color:#333;
+    font-size:14px;
+}
+.form-group input{
+    width:100%;
+    padding:12px;
+    border:2px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+    transition:border-color 0.2s, background 0.2s;
+}
+.form-group input:focus{
+    border-color:brown;
+    background:#fffef5;
+    outline:none;
+}
+/* Error and Success message spans */
+span[id$="Error"]{
+    font-size:13px;
+    min-height:18px;
+    margin-top:4px;
+    font-weight:600;
+}
+.error-message{
+    color:#d9534f;
+    display:block;
+}
+.success-message{
+    color:#28a745;
+    display:block;
+}
+/* Button */
+.submit-btn{
+    background:brown;
+    color:white;
+    padding:12px 20px;
+    font-size:16px;
+    font-weight:bold;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    width:100%;
+    margin-top:10px;
+    transition:background 0.3s;
+}
+.submit-btn:hover{
+    background:#5c1010;
+}
+.login-link{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+}
+.login-link a{
+    color:brown;
+    text-decoration:none;
+    font-weight:bold;
+}
+.login-link a:hover{
+    text-decoration:underline;
+}
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    padding:20px;
+    text-align:center;
+    margin-top:20px;
+    border-radius:25px 25px 0 0;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Online Art Supplies Store</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.html#shop">SHOP</a></li>
+        <li><a href="signup.html">SIGN UP</a></li>
+        <li><a href="index.html#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<!-- Main Container -->
+<div class="container">
+    <div class="signup-card">
+        <h2>Sign up</h2>
+        <p class="subtitle">Join our community of artists for exclusive supplies & discounts</p>
+
+        <form id="signupForm" novalidate>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Name">
+                <span id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Email">
+                <span id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Password">
+                <span id="passError"></span>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign up</button>
+        </form>
+
+        <p class="login-link">Already have an account? <a href="index.html">Back to Home</a></p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <h3>Follow us for creating timeless paintings...</h3>
+    <p>© 2026 Online Art Supplies Store</p>
+</footer>
+
+<!-- Link to external validation script -->
+<script src="validate.js"></script>
+</body>
+</html>
+
