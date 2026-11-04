@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HashRouter, Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
 import "./styles.css";
 
 const categories = ["starter", "main", "dessert", "drink"];
@@ -441,9 +441,12 @@ export default function App() {
   const [orderType, setOrderType] = useState("takeaway");
   const [table, setTable] = useState("");
   const shop = { cart, setCart, orderType, setOrderType, table, setTable };
+  const basename = window.location.pathname.startsWith("/WEB-TECHNOLOGY-LAB/EXP_7")
+    ? "/WEB-TECHNOLOGY-LAB/EXP_7"
+    : undefined;
 
   return (
-    <HashRouter>
+    <BrowserRouter basename={basename}>
       <header>
         <Link to="/" className="brand">CHICKEN</Link>
         <nav><Link to="/reserve">Reserve</Link><Link to="/staff">Staff</Link></nav>
@@ -456,6 +459,6 @@ export default function App() {
         <Route path="/reservation/:id" element={<ReservationDone />} />
         <Route path="/staff" element={<Staff />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
