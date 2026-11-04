@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
+import { HashRouter, Link, Route, Routes, useNavigate, useParams } from "react-router-dom";
 import "./styles.css";
 
 const categories = ["starter", "main", "dessert", "drink"];
@@ -443,7 +443,7 @@ export default function App() {
   const shop = { cart, setCart, orderType, setOrderType, table, setTable };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <header>
         <Link to="/" className="brand">CHICKEN</Link>
         <nav><Link to="/reserve">Reserve</Link><Link to="/staff">Staff</Link></nav>
@@ -456,6 +456,6 @@ export default function App() {
         <Route path="/reservation/:id" element={<ReservationDone />} />
         <Route path="/staff" element={<Staff />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
