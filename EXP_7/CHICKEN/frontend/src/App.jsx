@@ -3,6 +3,13 @@ import { BrowserRouter, Link, Route, Routes, useNavigate, useParams } from "reac
 import "./styles.css";
 
 const categories = ["starter", "main", "dessert", "drink"];
+const demoMenu = [
+  { _id: "demo-1", name: "Crispy Chicken Wings", category: "starter", price: 220, veg: false, available: true },
+  { _id: "demo-2", name: "Grilled Chicken Burger", category: "main", price: 280, veg: false, available: true },
+  { _id: "demo-3", name: "Classic Chicken Biryani", category: "main", price: 320, veg: false, available: true },
+  { _id: "demo-4", name: "Chocolate Brownie", category: "dessert", price: 150, veg: true, available: true },
+  { _id: "demo-5", name: "Fresh Lime Soda", category: "drink", price: 90, veg: true, available: true }
+];
 const tables = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 const timeSlots = ["12:00", "13:00", "14:00", "19:00", "20:00", "21:00"];
 const today = new Date().toISOString().slice(0, 10);
@@ -56,7 +63,7 @@ function Menu({ cart, setCart, orderType, setOrderType, table, setTable }) {
   const [category, setCategory] = useState("all");
 
   useEffect(() => {
-    api("/menu").then(setMenu).catch((err) => alert(err.message));
+    api("/menu").then((data) => setMenu(data.length ? data : demoMenu)).catch(() => setMenu(demoMenu));
   }, []);
 
   return (
