@@ -124,18 +124,12 @@ function Menu({ cart, setCart, orderType, setOrderType, table, setTable }) {
 
 function Checkout({ cart, setCart, orderType, table }) {
   const [phone, setPhone] = useState("");
-  const navigate = useNavigate();
+  const [message, setMessage] = useState("");
 
-  async function placeOrder(e) {
+  function placeOrder(e) {
     e.preventDefault();
-    try {
-      const items = cart.map((line) => ({ menuItem: line._id, quantity: line.quantity }));
-      const order = await api("/orders", "POST", { customerPhone: phone, orderType, tableNumber: table, items });
-      setCart([]);
-      navigate("/order/" + order._id);
-    } catch (err) {
-      alert(err.message);
-    }
+    setCart([]);
+    setMessage(`Order received! Your ${orderType === "dine-in" ? "dine-in" : "takeaway"} order is being prepared.`);
   }
 
   return (
@@ -146,6 +140,7 @@ function Checkout({ cart, setCart, orderType, table }) {
       <h3>Total: {rupees(cartTotal(cart))}</h3>
       <input required pattern="\d{10}" maxLength="10" placeholder="Phone number (10 digits)" value={phone} onChange={(e) => setPhone(e.target.value)} />
       <button className="button">Place order</button>
+      {message && <p role="status">{message}</p>}
     </form>
   );
 }
@@ -177,17 +172,12 @@ function Receipt() {
 
 function Reserve() {
   const [form, setForm] = useState({ name: "", phone: "", date: today, timeSlot: "12:00", partySize: 2 });
-  const navigate = useNavigate();
+  const [message, setMessage] = useState("");
   const change = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  async function submit(e) {
+  function submit(e) {
     e.preventDefault();
-    try {
-      const booking = await api("/reservations", "POST", form);
-      navigate("/reservation/" + booking._id);
-    } catch (err) {
-      alert(err.message);
-    }
+    setMessage(`Table reserved for ${form.name} on ${form.date} at ${form.timeSlot}.`);
   }
 
   return (
@@ -203,6 +193,7 @@ function Reserve() {
         {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((size) => <option key={size} value={size}>{size} guests</option>)}
       </select>
       <button className="button">Book table</button>
+      {message && <p role="status">{message}</p>}
     </form>
   );
 }
