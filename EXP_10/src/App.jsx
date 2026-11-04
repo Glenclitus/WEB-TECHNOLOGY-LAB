@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./App.css";
 
 const products = [
-    { image: "/art_basic.jpg", title: "Essential Art Supplies", description: "Everything you need to begin your next creative project." },
-    { image: "/mona_lisa.jpg", title: "Paintings Collection", description: "Discover beautiful paintings for inspiration and display." },
-    { image: "/art.jpg", title: "Professional Supplies", description: "Upgrade your toolkit with professional-grade materials." }
+    { image: new URL("../art_basic.jpg", import.meta.url).href, title: "Essential Art Supplies", description: "Everything you need to begin your next creative project." },
+    { image: new URL("../mona_lisa.jpg", import.meta.url).href, title: "Paintings Collection", description: "Discover beautiful paintings for inspiration and display." },
+    { image: new URL("../art.jpg", import.meta.url).href, title: "Professional Supplies", description: "Upgrade your toolkit with professional-grade materials." }
 ];
 
 const startingTasks = [
@@ -27,7 +27,7 @@ function Header({ theme, onToggleTheme }) {
                 <a href="#home">HOME</a>
                 <a href="#shop">SHOP</a>
                 <a href="#planner">PLANNER</a>
-                <a href="/signup.html">SIGN UP</a>
+                <a href="./signup.html">SIGN UP</a>
                 <a href="#contact">CONTACT</a>
             </nav>
         </>
