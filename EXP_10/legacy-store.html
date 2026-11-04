@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Art Supplies Store</title>
+<style>
+/* Basic CSS */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:Arial, sans-serif;
+    background:lightyellow;
+    line-height:1.6;
+    color:#333;
+}
+/* Header */
+header{
+    background:lightyellow;
+    color:black;
+    padding:20px;
+    text-align:center;
+    border-radius:0 0 30px 30px;
+}
+/* Navigation */
+nav{
+    background:brown;
+}
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+nav li{
+    padding:15px;
+}
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+nav a:hover{
+    color:yellow;
+}
+/* Hero Section */
+.mainbar{
+    padding:50px;
+    text-align:center;
+    background-image:
+        url("arts.jpg"),
+        linear-gradient(lightyellow, #f5d6a6);
+    background-position:
+        right bottom,
+        left top;
+    background-repeat:
+        no-repeat,
+        no-repeat;
+    background-size:
+        contain,
+        cover;
+    border-radius:25px;
+    margin:0 20px;
+}
+/* Main Container */
+.container{
+    display:flex;
+    padding:20px;
+    gap:20px;
+}
+/* Sidebar */
+.sidebar{
+    width:25%;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 0 8px gray;
+    height:fit-content;
+}
+.sidebar h3{
+    margin-bottom:10px;
+    color:brown;
+}
+.sidebar ul{
+    list-style:none;
+}
+.sidebar li{
+    padding:10px;
+    border-bottom:1px solid gray;
+}
+.sidebar li:nth-child(odd){
+    background:#f2f2f2;
+}
+.sidebar li:nth-child(even){
+    background:#fff;
+}
+/* Content */
+.content{
+    width:75%;
+}
+/* Cards */
+.cards{
+    display:flex;
+    gap:20px;
+    align-items:stretch;
+}
+.card{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 8px gray;
+    transition:0.3s;
+}
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    background-size:cover;
+    border-radius:15px;
+}
+.card:nth-child(odd){
+    background:#fffaf0;
+}
+.card:nth-child(even){
+    background:#f0f8ff;
+}
+.card:hover{
+    transform:scale(1.03);
+    box-shadow:0 0 15px gray;
+}
+.card h3{
+    margin:10px 0;
+}
+.card h3:hover + p{
+    color:brown;
+    font-weight:bold;
+}
+/* Button */
+button{
+    background:#0066cc;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+    border-radius:8px;
+}
+button:hover{
+    background:#003d80;
+}
+
+/* =========================================
+   TASK TRACKER APP (JavaScript Functions App)
+   ========================================= */
+.task-tracker-card{
+    margin-top:30px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 12px rgba(0,0,0,0.15);
+    border-top:6px solid brown;
+}
+.task-tracker-card h3{
+    color:brown;
+    font-size:22px;
+    margin-bottom:8px;
+}
+.task-tracker-card p.desc{
+    color:#666;
+    margin-bottom:20px;
+    font-size:14px;
+}
+#taskForm{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+#taskInput{
+    flex:1;
+    padding:12px 15px;
+    border:2px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+#taskInput:focus{
+    border-color:brown;
+    background:#fffef5;
+    outline:none;
+}
+#taskForm button{
+    background:brown;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:0;
+}
+#taskForm button:hover{
+    background:#5c1010;
+}
+.tracker-controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:15px;
+    padding-bottom:10px;
+    border-bottom:1px solid #eee;
+}
+.filters{
+    display:flex;
+    gap:8px;
+}
+.filter-btn{
+    background:#f0f0f0;
+    color:#333;
+    border:1px solid #ccc;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:13px;
+    cursor:pointer;
+    margin-top:0;
+    font-weight:600;
+}
+.filter-btn.active{
+    background:brown;
+    color:white;
+    border-color:brown;
+}
+#counter{
+    font-size:14px;
+    font-weight:bold;
+    color:#777;
+}
+#taskList{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.task-row{
+    display:flex;
+    align-items:center;
+    background:#fafafa;
+    border:1px solid #e0e0e0;
+    padding:12px 15px;
+    border-radius:10px;
+    transition:background 0.2s;
+}
+.task-row:hover{
+    background:#f4f4f4;
+}
+.task-row input[type="checkbox"]{
+    width:20px;
+    height:20px;
+    cursor:pointer;
+    accent-color:brown;
+    margin-right:12px;
+}
+.task-text{
+    flex:1;
+    font-size:15px;
+    color:#333;
+}
+.task-row.completed .task-text{
+    text-decoration:line-through;
+    color:#888;
+}
+.task-actions{
+    display:flex;
+    gap:6px;
+}
+.btn-icon{
+    background:none;
+    border:none;
+    padding:4px 8px;
+    margin-top:0;
+    font-size:16px;
+    cursor:pointer;
+    border-radius:6px;
+    color:#666;
+    transition:0.2s;
+}
+.btn-edit:hover{
+    background:#e0e7ff;
+    color:#3b82f6;
+}
+.btn-delete:hover{
+    background:#fee2e2;
+    color:#ef4444;
+}
+.empty-message{
+    text-align:center;
+    color:#999;
+    padding:20px;
+    font-style:italic;
+}
+
+/* Contact Form Box */
+.form-box{
+    margin-top:25px;
+    padding:20px;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 0 8px gray;
+}
+.form-box h3{
+    margin-bottom:10px;
+}
+.form-box input{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border:2px solid gray;
+    border-radius:8px;
+}
+.form-box input:focus{
+    border:2px solid brown;
+    background:#e9ffe9;
+    outline:none;
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    padding:20px;
+    text-align:center;
+    margin-top:20px;
+    border-radius:25px 25px 0 0;
+}
+
+/* Responsive */
+@media screen and (max-width:992px){
+    .container{
+        flex-direction:column;
+    }
+    .sidebar,
+    .content{
+        width:100%;
+    }
+    .cards{
+        flex-wrap:wrap;
+    }
+    .card{
+        width:45%;
+    }
+}
+@media screen and (max-width:768px){
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+    }
+    .cards{
+        flex-direction:column;
+    }
+    .card{
+        width:100%;
+    }
+    .mainbar{
+        padding:30px;
+    }
+}
+@media screen and (max-width:480px){
+    header h1{
+        font-size:24px;
+    }
+    .mainbar h2{
+        font-size:22px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Online Art Supplies Store</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="#shop">SHOP</a></li>
+        <li><a href="signup.html">SIGN UP</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="mainbar">
+    <h2>Welcome to Our Art Supplies Store</h2>
+    <p>Discover our wide range of high quality art supplies for all your creative needs.</p>
+</section>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Categories</h3>
+        <ul>
+            <li>Acrylic Paints</li>
+            <li>Oil Paints</li>
+            <li>Watercolors</li>
+            <li>Pencils</li>
+            <li>Sketching Tools</li>
+            <li>Brushes</li>
+        </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <h2 id="shop">Art Supplies</h2>
+        <p>Discover our wide range of high-quality art supplies for all your creative needs.</p>
+
+        <!-- Product Cards -->
+        <div class="cards">
+            <div class="card">
+                <img src="art_basic.jpg" alt="Art Supplies">
+                <h3>Essential Art Supplies</h3>
+                <p>Create wonderful artwork with our essential art supplies.</p>
+                <button>Read More</button>
+            </div>
+            <div class="card">
+                <img src="mona_lisa.jpg" alt="Mona Lisa">
+                <h3>Paintings</h3>
+                <p>Discover our collection of beautiful paintings.</p>
+                <button>Read More</button>
+            </div>
+            <div class="card">
+                <img src="art.jpg" alt="Professional Art Supplies">
+                <h3>Professional Art Supplies</h3>
+                <p>Upgrade your art toolkit with our professional grade supplies.</p>
+                <button>Read More</button>
+            </div>
+        </div>
+
+        <!-- Task Tracker Application (Built with Modular JavaScript Functions) -->
+        <div class="task-tracker-card" id="tracker">
+            <h3>Art Project Planner & Supplies Checklist</h3>
+            <p class="desc">Manage your art projects and supplies checklist using a modular JavaScript function-driven web application.</p>
+
+            <form id="taskForm">
+                <input id="taskInput" type="text" placeholder="Add an art supply or project task (e.g. 'Canvas boards 12x16')..." autocomplete="off">
+                <button type="submit">Add</button>
+            </form>
+
+            <div class="tracker-controls">
+                <div class="filters">
+                    <button type="button" class="filter-btn active" data-filter="all">All</button>
+                    <button type="button" class="filter-btn" data-filter="open">Open</button>
+                    <button type="button" class="filter-btn" data-filter="finished">Finished</button>
+                </div>
+                <p id="counter">0 tasks left</p>
+            </div>
+
+            <ul id="taskList"></ul>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="form-box" id="contact">
+            <h3>Contact Us</h3>
+            <form>
+                <input type="text" placeholder="Enter your name" required>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <h3>Follow us for creating timeless paintings...</h3>
+    <p>© 2026 Online Art Supplies Store</p>
+</footer>
+
+<!-- Link to external modular application script -->
+<script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+{
+  "name": "web-technology-lab-exp-8",
+  "version": "1.0.0",
+  "description": "Server-side art supplies application using Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC"
+}
